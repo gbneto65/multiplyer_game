@@ -1,6 +1,12 @@
 import random
+import winsound
 tab = 3
 min = 0
+herz_correct = 3000
+msec_correct = 300
+herz_incorrect = 500
+msec_incorrect = 1000
+
 print("Multiples Game")
 
 while True:
@@ -11,6 +17,7 @@ while True:
 
     if resp == true_resp:
         min = min + .5
+        winsound.Beep(herz_correct,msec_correct)
         print( f"right Answer - You have now {min} minutes to play MINECRAFT")
 
     elif resp == 99:
@@ -19,6 +26,7 @@ while True:
         break
     else:
         min = min - 1
+        winsound.Beep(herz_incorrect, msec_incorrect)
         print(f"Wrong Answer - You have now {min} minutes to play MINECRAFT")
 
 
